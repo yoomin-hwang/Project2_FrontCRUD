@@ -4,8 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <titleCRUD WEB Page>YoominNet 공지 게시판</titleCRUD>
-    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/css.css">
 </head>
+<script>
+    function validateForm() {
+        var title = document.form1.title;
+        var writer = document.form1.writer;
+        var pw = document.form1.pw;
+        var content = document.document.form1.content;
+
+        if(title == "") {
+            alert("제목을 입력하세요.");
+            event.preventDefault();
+            return false;
+        }
+
+        if(writer == "") {
+            alert("글쓴이를 입력하세요.");
+            event.preventDefault();
+            return false;
+        }
+
+        if(pw == "") {
+            alert("비밀번호를 입력하세요.");
+            event.preventDefault();
+            return false;
+        }
+
+        if(content == "") {
+            alert("내용을 입력하세요.");
+            event.preventDefault();
+            return false;
+        }
+
+        alert("게시물이 추가됩니다\n");
+    }
+
+    function checkDelete (ths) {
+        var ths = $(ths);
+        alert("게시물을 삭제할까요?");
+        ths.parents("form-group").remove();
+    }
+
+    function cancelAction() {
+        window.history.back();
+    }
+    </script>
 <body>
     <div class="board_wrap">
         <div class="board_title">
@@ -14,32 +58,42 @@
         </div>
         <div class="board_add_wrap">
             <div class="board_add">
-                <div class="title">
-                    <dl>
-                        <dt>제목</dt>
-                        <dd><input type="text" placeholder="제목 입력" value="실전 프로젝트 8주차 퀴즈 공지"></dd>
-                    </dl>
+                <form name="form1" action="#.php" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <div class="title">
+                            <dl>
+                                <dt>제목</dt>
+                                <dd><input type="text" id="title" placeholder="제목 입력" value="실전 프로젝트 8주차 퀴즈 공지" required></dd>
+                            </dl>
+                        </div>
+                        <div class="info">
+                            <dl>
+                                <dt>글쓴이</dt>
+                                <dd><input type="text" id="writer" placeholder="글쓴이 입력" value="김한동" required></dd>
+                            </dl>
+                            <dl>
+                                <dt>비밀번호</dt>
+                                <dd><input type="password" id="pw" placeholder="비밀번호 입력" value="1234" required></dd>
+                            </dl>
+                        </div>
+                        <div class="content" id="content" required>
+                            <textarea placeholder="내용 입력">
+        8주차 금요일 퀴즈가 있을 예정입니다.<br>
+                            </textarea>
+                        </div>
+                    </div>
+                </form>
+                <div class="bt_wrap">
+                    <a href="view.html" class="on">
+                        <button type="submit" id="add" onclick="validateForm()">수정</button>
+                    </a>
+                    <a href="index.html" class="delete">
+                        <button type="button" onclick="checkDelete(this)">삭제</button>button>
+                    </a>
+                    <a href="index.html" class="delete">
+                        <button type="button" onclick="cancelAction()">취소</button>
+                    </a>
                 </div>
-                <div class="info">
-                    <dl>
-                        <dt>글쓴이</dt>
-                        <dd><input type="text" placeholder="글쓴이 입력" value="김한동"></dd>
-                    </dl>
-                    <dl>
-                        <dt>비밀번호</dt>
-                        <dd><input type="password" placeholder="비밀번호 입력" value="1234"></dd>
-                    </dl>
-                </div>
-                <div class="content">
-                    <textarea placeholder="내용 입력">
-8주차 금요일 퀴즈가 있을 예정입니다.<br>
-                    </textarea>
-                </div>
-            </div>
-            <div class="bt_wrap">
-                <a href="add.html" class="on">등록</a>
-                <a href="index.html" class="delete">삭제</a>
-                <a href="index.html">취소</a>
             </div>
         </div>
     </div>
