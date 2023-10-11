@@ -13,30 +13,30 @@
         var content = document.form1.content;
 
         if(title == "") {
-            alert("제목을 입력하세요.");
+            window.alert("제목을 입력하세요.");
             event.preventDefault();
             return false;
         }
 
         if(writer == "") {
-            alert("글쓴이를 입력하세요.");
+            window.alert("글쓴이를 입력하세요.");
             event.preventDefault();
             return false;
         }
 
         if(pw == "") {
-            alert("비밀번호를 입력하세요.");
+            window.alert("비밀번호를 입력하세요.");
             event.preventDefault();
             return false;
         }
 
         if(content == "") {
-            alert("내용을 입력하세요.");
+            window.alert("내용을 입력하세요.");
             event.preventDefault();
             return false;
         }
 
-        alert("게시물이 추가됩니다\n");
+        window.alert("게시물이 추가됩니다\n");
         return true;
     }
 

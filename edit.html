@@ -14,36 +14,36 @@
         var content = document.document.form1.content;
 
         if(title == "") {
-            alert("제목을 입력하세요.");
+            window.alert("제목을 입력하세요.");
             event.preventDefault();
             return false;
         }
 
         if(writer == "") {
-            alert("글쓴이를 입력하세요.");
+            window.alert("글쓴이를 입력하세요.");
             event.preventDefault();
             return false;
         }
 
         if(pw == "") {
-            alert("비밀번호를 입력하세요.");
+            window.alert("비밀번호를 입력하세요.");
             event.preventDefault();
             return false;
         }
 
         if(content == "") {
-            alert("내용을 입력하세요.");
+            window.alert("내용을 입력하세요.");
             event.preventDefault();
             return false;
         }
 
-        alert("게시물이 추가됩니다\n");
+        window.alert("게시물이 추가됩니다\n");
         return true;
     }
 
     function checkDelete (ths) {
         var ths = $(ths);
-        alert("게시물을 삭제할까요?");
+        window.alert("게시물을 삭제할까요?");
         ths.parents("form-group").remove();
     }
 
@@ -79,7 +79,7 @@
                         </div>
                         <div class="content" id="content" required>
                             <textarea placeholder="내용 입력">
-        8주차 금요일 퀴즈가 있을 예정입니다.<br>
+8주차 금요일 퀴즈가 있을 예정입니다.<br>
                             </textarea>
                         </div>
                     </div>
