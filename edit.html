@@ -14,36 +14,36 @@
         var content = document.document.form1.content;
 
         if(title == "") {
-            window.alert("제목을 입력하세요.");
+            alert("제목을 입력하세요.");
             event.preventDefault();
             return false;
         }
 
         if(writer == "") {
-            window.alert("글쓴이를 입력하세요.");
+            alert("글쓴이를 입력하세요.");
             event.preventDefault();
             return false;
         }
 
         if(pw == "") {
-            window.alert("비밀번호를 입력하세요.");
+            alert("비밀번호를 입력하세요.");
             event.preventDefault();
             return false;
         }
 
         if(content == "") {
-            window.alert("내용을 입력하세요.");
+            alert("내용을 입력하세요.");
             event.preventDefault();
             return false;
         }
 
-        window.alert("게시물이 추가됩니다\n");
+        alert("게시물이 추가됩니다\n");
         return true;
     }
 
     function checkDelete (ths) {
         var ths = $(ths);
-        window.alert("게시물을 삭제할까요?");
+        alert("게시물을 삭제할까요?");
         ths.parents("form-group").remove();
     }
 
@@ -88,10 +88,10 @@
                     <a href="view.html" class="on">
                         <button type="submit" id="add" onclick="validateForm()">수정</button>
                     </a>
-                    <a href="index.html" class="delete">
+                    <a href="index.html" class="on">
                         <button type="button" onclick="checkDelete(this)">삭제</button>button>
                     </a>
-                    <a href="index.html" class="delete">
+                    <a href="index.html" class="on">
                         <button type="button" onclick="cancelAction()">취소</button>
                     </a>
                 </div>
