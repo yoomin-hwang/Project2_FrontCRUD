@@ -1,9 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-
- }
-
+}
  html {
     font-size: 10px;
  }
@@ -51,7 +49,7 @@
     font-size: 1.4rem;
  }
 
- .bt_warp a:first-child {
+ .bt_wrap a:first-child {
     margin-left: 0;
  }
 
@@ -251,14 +249,14 @@
     width: calc(100% - 100px);
  }
 
- .board_add.form-group.title input[type="text"],
- .board_add.form-group.info input[type="text"],
- .board_add.form-group.info input[type="password"] {
+ .board_add .form-group.title input[type="text"],
+ .board_add .form-group.info input[type="text"],
+ .board_add .form-group.info input[type="password"] {
     padding: 10px;
     box-sizing: border-box;
  }
 
- .board_add.form-group.title input[type="text"] {
+ .board_add .form-group.title input[type="text"] {
     width: 80%;
  }
 

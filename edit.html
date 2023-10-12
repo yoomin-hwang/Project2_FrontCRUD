@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <titleCRUD WEB Page>YoominNet 공지 게시판</titleCRUD>
-    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="CSS/css.css">
 </head>
 <script>
     function validateForm() {
@@ -37,7 +37,9 @@
             return false;
         }
 
-        alert("게시물이 추가됩니다\n");
+        if($title && $writer && $pw && $content) {
+            alert("게시물이 추가됩니다\n");
+        }
     }
 
     function checkDelete (ths) {
@@ -58,7 +60,7 @@
         </div>
         <div class="board_add_wrap">
             <div class="board_add">
-                <form name="form1" action="#.php" onsubmit="return validateForm()">
+                <form name="form1" action="write_ok.php" onsubmit="return validateForm()">
                     <div class="form-group">
                         <div class="title">
                             <dl>
@@ -77,9 +79,7 @@
                             </dl>
                         </div>
                         <div class="content" id="content" required>
-                            <textarea placeholder="내용 입력">
-        8주차 금요일 퀴즈가 있을 예정입니다.<br>
-                            </textarea>
+                            <textarea placeholder="내용 입력"></textarea>
                         </div>
                     </div>
                 </form>
@@ -87,10 +87,10 @@
                     <a href="view.html" class="on">
                         <button type="submit" id="add" onclick="validateForm()">수정</button>
                     </a>
-                    <a href="index.html" class="delete">
+                    <a href="index.html" class="on">
                         <button type="button" onclick="checkDelete(this)">삭제</button>button>
                     </a>
-                    <a href="index.html" class="delete">
+                    <a href="index.html" class="on">
                         <button type="button" onclick="cancelAction()">취소</button>
                     </a>
                 </div>
