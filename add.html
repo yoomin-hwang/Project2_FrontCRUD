@@ -36,7 +36,9 @@
             return false;
         }
 
-        alert("게시물이 추가됩니다\n");
+        if($title && $writer && $pw && $content) {
+            alert("게시물이 추가됩니다\n");
+        }
     }
 
     function cancelAction() {
@@ -53,7 +55,7 @@
         </div>
         <div class="board_add_wrap">
             <div class="board_add">
-                <form name="form1" action="#.php" onsubmit="return validateForm()" method="post">
+                <form name="form1" action="write_ok.php" onsubmit="return validateForm()" method="post">
                     <div class="form-group">
                         <div class="title">
                             <dl>

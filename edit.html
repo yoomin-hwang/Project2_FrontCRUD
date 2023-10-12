@@ -37,9 +37,8 @@
             return false;
         }
 
-        else {
+        if($title && $writer && $pw && $content) {
             alert("게시물이 추가됩니다\n");
-            return true;
         }
     }
 
@@ -61,7 +60,7 @@
         </div>
         <div class="board_add_wrap">
             <div class="board_add">
-                <form name="form1" action="#.php" onsubmit="return validateForm()">
+                <form name="form1" action="write_ok.php" onsubmit="return validateForm()">
                     <div class="form-group">
                         <div class="title">
                             <dl>
